@@ -1,6 +1,6 @@
 
-## `Helpful resources and points:`
----
+# `Helpful resources and points:`
+
 **`make your .py script a terminal command`**
 - make script executable
 ```sh
@@ -45,10 +45,41 @@ pip install -U jupyter_console
 - http://www.codecademy.com/tracks/web/
 - https://developer.mozilla.org/en-US/learn/html/
 ---
-**`get free accuweather api`**
+**`hot to get free accuweather api`**
 
     Go to AccuWeather
     Register or log in
     Create new application at Application page
 
 ---
+**`convert bs4.BeautifulSoup object(in json) into dictionry`**
+```python
+# convert into string
+bs_obj_str=str(bs_ojecct)
+# use json.loads() to parse valid json string into python dict
+bs_dict=json.loads(bs_obj_str)
+#####
+# It is mainly used for deserializing native string, byte, or byte array which consists of JSON data into Python Dictionary.
+#####
+```
+
+**`radio-garden api links`**
+```
+#Get all country and cities
+
+http://radio.garden/api/ara/content/places
+
+(stations by city, gps coordinates)
+
+#Get info of city and Stations by city (last id is id_city)
+
+http://radio.garden/api/ara/content/page/W9g0lZfQ
+
+#Get info of specific station (last id is id_station)
+
+http://radio.garden/api/ara/content/channel/tMGsmGxF
+
+#Example Stream URL (id is id_station)
+
+http://radio.garden/api/ara/content/listen/tMGsmGxF/channel.mp3
+```
