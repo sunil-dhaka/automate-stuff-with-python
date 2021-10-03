@@ -83,3 +83,10 @@ http://radio.garden/api/ara/content/channel/tMGsmGxF
 
 http://radio.garden/api/ara/content/listen/tMGsmGxF/channel.mp3
 ```
+---
+**`installing geckodriver on ubuntu linux`**
+```sh
+sudo apt-get install firefox-geckodriver
+## add path to geckodriver executable for the sysytem to find and execute
+```
+---
