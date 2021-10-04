@@ -90,3 +90,24 @@ sudo apt-get install firefox-geckodriver
 ## add path to geckodriver executable for the sysytem to find and execute
 ```
 ---
+**`update all your python modules`**
+```sh
+#first install `pip-review`
+pip install pip-review
+#automatically
+pip-review --auto
+#interactively
+pip-review --interactive
+#as always chech its options available to get your option
+pip-review
+```
+**`prompt`**
+```sh
+pip install PyInquirer
+# visit repo to know more: https://github.com/CITGuru/PyInquirer
+# Successfully installed prompt-toolkit-1.0.14
+# but jupyter-console was running on 3.0.20torrento
+# Found existing installation: prompt-toolkit 3.0.20
+#    Uninstalling prompt-toolkit-3.0.20:
+#      Successfully uninstalled prompt-toolkit-3.0.20
+```
