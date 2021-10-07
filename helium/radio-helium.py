@@ -6,7 +6,7 @@ start_chrome()
 go_to(url)
 Config.implicit_wait_secs=5
 try:
-    click(Button('Play'))
+    press(SPACE)
 except Exception as e:
     print(e)
     kill_browser()
