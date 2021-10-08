@@ -1,3 +1,7 @@
+# added
+helium/logindetails.py
+login.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -5,7 +9,6 @@ __pycache__/
 tester.ipynb
 # C extensions
 *.so
-login.py
 # Distribution / packaging
 .Python
 build/
