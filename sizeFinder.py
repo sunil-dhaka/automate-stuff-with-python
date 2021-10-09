@@ -3,10 +3,8 @@ import os
 def sizeFinder(): # <-- goes pwd
     totalSize=0
     for f in os.listdir():
-        if os.path.getsize(f)==4096:
-#            print('$$$$')
+        if os.path.isdir(f):
             os.chdir(f)
- #           print(os.listdir())
             totalSize+= sizeFinder()+4096
             os.chdir('..')
         else:
