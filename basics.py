@@ -88,3 +88,51 @@ print('Four score and seven ' + \
 These tricks are useful when you want to rearrange long lines of Python
 code to be a bit more readable.
 '''
+
+#dictionaries
+'''
+keys()
+values()
+items() <-- they are tuple of key and value :: (key,value)
+
+The get() Method
+It’s tedious to check whether a key exists in a dictionary before accessing
+that key’s value. Fortunately, dictionaries have a get() method that takes two
+arguments: the key of the value to retrieve and a fallback value to return if
+that key does not exist.
+---> get() can be used effectively in a flow to avoid `KeyError`
+
+The setdefault() Method
+You’ll often have to set a value in a dictionary for a certain key only if that
+key does not already have a value
+
+# keeping these dict methods might come handy when working with dicts
+'''
+#strings
+'''
+character escaping just like shell
+
+--> string.method()
+
+upper(),lower(),isupper(),islower()
+
+isalpha(),isalnum(),isdecimal(),isspace(),istitle()
+
+startswith(),endswith()
+
+join(),split()
+
+Justifying Text with rjust(), ljust(), and center()
+
+## useful in formatting output
+
+>>> 'Hello'.rjust(20, '*')
+'***************Hello'
+>>> 'Hello'.ljust(20, '-')
+'Hello---------------'
+>>> 'Hello'.center(20)
+'   Hello   '
+>>> 'Hello'.center(20, '=')
+'=======Hello========'
+
+'''
