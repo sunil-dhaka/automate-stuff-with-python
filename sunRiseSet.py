@@ -9,8 +9,8 @@ today=str(datetime.now())[1:10]
 
 
 def battutaQuota(apiKey):
-    URL=f'http://battuta.medunes.net/api/country/all/?key={apiKey}'
-    quotaLeft=requests.get(URL).json()
+    URL=f'http://battuta.medunes.net/api/quota/?key={apiKey}'
+    quotaLeft=requests.get(URL).json()[0]
     print('Remaining quota count on battuta',quotaLeft['remaining quota'])
     return
 
@@ -90,6 +90,9 @@ answer=prompt(whichRegion)
 regionSelected=answer['type']
 print(regionSelected,'---- region in ',countryName)
 
+citySelected=input('city hint in the region -- ')
+'''
+# it does not seems to work
 def getCity(regionSelected,apiKey):
     url=f'http://battuta.medunes.net/api/city/fr/search/?region={regionSelected}&key={apiKey}'
     cityList=requests.get(url).json()
@@ -100,23 +103,43 @@ city=getCity(regionSelected,apiKey)
 answer=prompter(city)
 citySelected=answer['type']['city']
 print(citySelected,'----city')
-
+'''
+# somehow API is not rsponding
+'''
 def getLanLet(regionSelected,citySelected,apiKey):
     url=f'http://battuta.medunes.net/api/city/search/?region={regionSelected}&city={citySelected}&key={apiKey}'
     latlanData=requests.get(url)
-    if len(latlanData)>0:
-        latlanData=latlanData[0]
-        return {'lat':latlanData['latitude'],'lan':latlanData['longitude']}
-    else:
-        print('na-valid latlanData available for regiona and city')
-        return None
+    print(latlanData.status_code)
+    print(latlanData.json())
+    return latlanData.json()
 
 latlanData=getLanLet(regionSelected,citySelected,apiKey)
 
+cityList=[city['city'] for city in latlanData]
+whichCity=[
+        {
+            'type':'list',
+            'name':'type',
+            'message':'please choose a option:',
+            'choices':cityList,
+            'default':0
+        }
+    ]
+answer=prompt(whichCity)
+cityName=answer['type']
+print(cityName,'---- region in ',countryName)
 
+for city in cityList:
+    if cityName in city.values():
+        latlanData={'lat':latlanData['latitude'],'lan':latlanData['longitude']}
+        break
+    else:
+        print('na-valid latlanData available for regiona and city')
+'''
+latlanData={'lat':'36.7201600','lan':'-4.4203400'}
 def getRiseSet(lat,lng,date=today): #<-- date format = '2021-10-13'
     URL=f'https://api.sunrise-sunset.org/json?lat={lat}&lng={lng}&date={date}'
-    data=requests.get(URL)
+    data=requests.get(URL).json()
     print(data['status'],' --- status')
     return data['results']
 if latlanData!=None:
