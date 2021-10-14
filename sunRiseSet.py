@@ -10,7 +10,7 @@ today=str(datetime.now())[1:10]
 
 def battutaQuota(apiKey):
     URL=f'http://battuta.medunes.net/api/quota/?key={apiKey}'
-    quotaLeft=requests.get(URL).json()[0]
+    quotaLeft=requests.get(URL).json()
     print('Remaining quota count on battuta',quotaLeft['remaining quota'])
     return
 
@@ -19,19 +19,6 @@ def getCountryCode(apiKey):
     codeJSON=requests.get(URL).json()
     return codeJSON
 
-'''
-return: list of dict with keys: name and code
-codes: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-response:
-[{"name":"COUNTRY_NAME_1","code":"COUNTRY_CODE_1"},{"name":"COUNTRY_NAME_2","code":"COUNTRY_CODE_2"},..]
-'''
-
-'''
-def getCity(country,region,apiKey):
-    url=f'http://battuta.medunes.net/api/city/search/?region={region}&city={city}&key={apiKey}'
-    hintData=requests.get(url).json()
-    return hintData
-'''
 country=input('country --')
 '''
 these also can be specified but will work with country only here
@@ -71,7 +58,7 @@ for country in countryHint:
 def getRefions(countrySelected,apiKey):
     url=f'http://battuta.medunes.net/api/region/{countrySelected}/all/?key={apiKey}'
     regionList=requests.get(url).json()
-    print(regionList)
+    #print(regionList)
     return regionList
 
 regionHint=getRefions(countrySelected,apiKey)
@@ -104,8 +91,9 @@ answer=prompter(city)
 citySelected=answer['type']['city']
 print(citySelected,'----city')
 '''
-# somehow API is not rsponding
-'''
+# somehow API is not rsponding to this request\
+# continously getting 404 error
+
 def getLanLet(regionSelected,citySelected,apiKey):
     url=f'http://battuta.medunes.net/api/city/search/?region={regionSelected}&city={citySelected}&key={apiKey}'
     latlanData=requests.get(url)
@@ -135,13 +123,14 @@ for city in cityList:
         break
     else:
         print('na-valid latlanData available for regiona and city')
-'''
+
 latlanData={'lat':'36.7201600','lan':'-4.4203400'}
 def getRiseSet(lat,lng,date=today): #<-- date format = '2021-10-13'
     URL=f'https://api.sunrise-sunset.org/json?lat={lat}&lng={lng}&date={date}'
     data=requests.get(URL).json()
     print(data['status'],' --- status')
     return data['results']
+
 if latlanData!=None:
     data=getRiseSet(latlanData['lat'],latlanData['lan'])
     print('Sunrise at -- ',data['sunrise'])
