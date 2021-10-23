@@ -1,6 +1,19 @@
 import os
 from helium import *
 from time import time,sleep
+from selenium import webdriver
+from selenium.webdriver import Firefox
+from selenium.webdriver import FirefoxOptions
+options = FirefoxOptions()
+# options.add_argument("--width=2560")
+# options.add_argument("--height=1440")
+options.set_preference("browser.download.folderList", 1)
+# 0 means to download to the desktop, 1 means to download to the default "Downloads" directory, 2 means to use the directory 
+options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/pdf;text/plain;application/text;text/xml;application/xml;application/vnd.adobe.dc+json")
+options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/pdf;application/vnd.adobe.dc+json;text/plain;text/xml")
+# start_firefox(options=options)
+# fp=webdriver.FirefoxProfile()
+# fp.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/pdf;text/plain;application/text;text/xml;application/xml")
 
 ######## os work ########
 # takes a list of 
@@ -22,7 +35,7 @@ files_list=os.listdir()
 
 ######## main converter functoin ########
 def pptTopdfAdobe(file):
-    
+    global options
     converting_from='.pptx'
     converting_to='.pdf'
     converted_file_name=file.replace(converting_from,converting_to)
@@ -32,9 +45,10 @@ def pptTopdfAdobe(file):
     if converted_file_name in download_list:
         print(f'already {converted_file_name} exists')
     else:
-        start_firefox(headless=False) 
+        start_firefox(headless=False,options=options) 
+        # driver = webdriver.Firefox(firefox_profile = fp)
         '''
-        headless does not work headless at least not in chrome
+        headless does not work at least not in chrome
         it does work with firefox but first check wether pdf downloading is auto-allowed or not
         otherwise have to work around that little firefox pop we get when downloading an unknown type of file
         OR
@@ -45,6 +59,8 @@ def pptTopdfAdobe(file):
         TODO:
         try out: firefox webdriver options setting
         '''
+        # driver.get('https://www.adobe.com/in/acrobat/online/ppt-to-pdf.html')
+
         go_to('https://www.adobe.com/in/acrobat/online/ppt-to-pdf.html')
         try:
             print('Sleeping for 2 secs ...')
