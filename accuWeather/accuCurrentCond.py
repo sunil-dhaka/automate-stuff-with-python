@@ -1,3 +1,12 @@
+'''
+This is my own implementation of the project available on:
+https://realpython.com/build-a-python-weather-app-cli/
+
+login.py file stores my api key.
+TODO: use secrets.ini type file for next automation project.
+TODO: 
+'''
+
 import login
 import requests
 from PyInquirer import prompt
@@ -11,7 +20,7 @@ def searchText(query,apiKey=accuAPI):
     url='http://dataservice.accuweather.com/locations/v1/search?q='+ '+'.join(query.split(' '))+f'&apikey={apiKey}'
     try:
         r=requests.get(url)
-        #print(r.json())
+        # print(r.json())
         print('total results for search query are >>> ',len(r.json()))
         return r.json()
     except:
@@ -40,7 +49,7 @@ else:
         to handle cases like not valid api and what not
         '''
         try:
-            searchList=[(city['EnglishName']+'-'+city['AdministrativeArea']['LocalizedName']+'-'+city['Key']) for city in searchResults]
+            searchList=[(city['EnglishName']+'-'+city['AdministrativeArea']['LocalizedName']+'-'+city['Key']) for city in searchResults[:5]] # only shows top 5 results
             answer=prompter(searchList)
             locationKey=answer['type'].split('-')[-1]
             #print(locationKey)
@@ -54,27 +63,37 @@ def currentConditions(locationKey,apiKey=accuAPI):
     url=f'http://dataservice.accuweather.com/currentconditions/v1/{locationKey}?&apikey={apiKey}'
 
     r=requests.get(url)
-    #print(r.json())
+    print(r.json())
     try:
         limitData=r.headers['RateLimit-Remaining']
         print('remainig quota of the day >>> ',limitData)
     except:
         pass
     return r.json()
+
+def formatter(lstr,rstr):
+    strLen=60
+    print(lstr.ljust(strLen-len(lstr)-len(rstr),'=')+rstr)
+
 try:
     currentData=currentConditions(locationKey)[0]
-    tempM=currentData['Temperature']['Metric']['Value']
-    tempI=currentData['Temperature']['Imperial']['Value']
+    tempM=str(currentData['Temperature']['Metric']['Value'])+' C'
+    tempI=str(currentData['Temperature']['Imperial']['Value'])+' F'
     if currentData['IsDayTime']:
         daynight='Day'
     else:
         daynight='Night'
     print('Weather Info'.center(40,'='))
-    print('Location'.ljust(20,'.')+(query.upper()).rjust(20))
-    print('Weather Type'.ljust(25,'.')+(currentData['WeatherText']).rjust(15))
-    print('Day or Night'.ljust(30,'.')+(daynight).rjust(10))
-    print('Metric Temp'.ljust(30,'.')+(str(tempM)+' C').rjust(10))
-    print('Imperial Temp'.ljust(30,'.')+(str(tempI)+' F').rjust(10))
+    formatter('Location ',query.upper())
+    formatter('Weather Type ',currentData['WeatherText'])
+    formatter('Day or Night ',daynight)
+    formatter('Metric Temp ',tempM)
+    formatter('Imperial Temp ',tempI)
+    # print('Location'.ljust(strLen-len()-len(),'.')+(query.upper()).rjust())
+    # print('Weather Type'.ljust(strLen-len()-len(),'.')+(currentData['WeatherText']).rjust())
+    # print('Day or Night'.ljust(strLen-len()-len(),'.')+(daynight).rjust())
+    # print('Metric Temp'.ljust(strLen-len()-len(),'.')+(str(tempM)+' C').rjust())
+    # print('Imperial Temp'.ljust(strLen-len()-len(),'.')+(str(tempI)+' F').rjust())
     print('Have a Great Day'.center(40,'='))
 except:
     print('No weather info available.')
