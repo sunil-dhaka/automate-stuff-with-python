@@ -47,3 +47,5 @@ added only to the end of a Paragraph object.
 - add_picture
 - add_break
 - add_picture
+
+- read [offical docs](https://python-docx.readthedocs.io/en/latest/)
