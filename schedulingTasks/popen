@@ -1,0 +1,64 @@
+Script started on 2022-03-13 13:53:40+05:30 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="95" LINES="48"]
+Python 3.8.5 (default, Sep  4 2020, 07:30:14) 
+[GCC 7.3.0] :: Anaconda, Inc. on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import subprocess
+>>> cal=subprocess.Popen('/usr/bin/gnome-calculator'([K)
+>>> cal.poll()
+>>> cal.wait()
+0
+>>> cal.wait()poll()=subprocess.Popen('/usr/bin/gnome-calculator')
+>>> cal=subprocess.Popen('/usr/bin/gnome-calculator')[C[C[C[C[C[C[C.wait()[K==1
+False
+>>> cal.wait()==1
+False
+>>> cal.wait()==1[K[K[K
+0
+>>> cal.wait()ncal.wait()[C[C[C[C[Cocal.wait()[C[C[C[C[C[Ctcal.wait()[C[C[C[C[C[C[C cal.wait()[C[C[C[C[C[C[C[C
+True
+>>> not cal.wait()[C[C[C[C[4Pcal.wait()==1[C[C[C[C[C[C[C=subprocess.Popen('/usr/bin/gnome-calculator')
+>>> cal=subprocess.Popen('/usr/bin/gnome-calculator')[C[C[C[Cnot cal.wait()[K[C[C[C[C[4Pcal.wait()[C[C[C[Cnot cal.wait()
+True
+>>> not cal.wait()[C[C[C[Ccal=subprocess.Popen('/usr/bin/gnome-calculator')
+>>> cal.poll()===[KNone
+True
+>>> cal.poll() is None
+True
+>>> while(cal.poll() is None):
+...     print([K[K[K[K[K[Ktime.sleep(1))[K
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+NameError: name 'time' is not defined
+>>> import timr[Ke
+>>> import time[C[C[C[C    time.sleep(1)[C[C[C[Cwhile(cal.poll() is None):
+... while(cal.poll() is None):[C[C[C[C[15Pimport time[C[C[C[C    time.sleep(1)
+... 
+>>> 
+>>>     time.sleep(1)[C[C[C[Cwhile(cal.poll() is None):[C[C[C[C[15Pimport time[C[C[C[C    time.sleep(1)[C[C[C[Cwhile(cal.poll() is None):[C[C[C[C[8Pcal.poll() is None[2P==None is None[2P==None is None
+False
+>>> cal.poll()
+0
+>>> impo[K[K[K[Ks[Ksubprocess.Popen(['/usr/bin/evince',''])h'])o'])m'])e'])/'])s'])u'])n'])i'])l'])d'])/'])D'])o'])w'])n'])l'])o'])a'])d'])s'])/'])o'])u'])t']).'])p'])d'])f'])
+<subprocess.Popen object at 0x7f114edcf4f0>
+>>> subprocess.Popen(['/usr/bin/evince','home/sunild/Downloads/out.pdf'])/home/sunild/Downloads/out.pdf'])
+<subprocess.Popen object at 0x7f114eeeb190>
+>>> exit()[K[K[K[K[K[Ksubprocess.Popen(['/usr/local/lib/python3.8',''])[C/home/sunild/Downloads/gits/automate-stuff-with-py'])thon/schedulingTasks/stopwatch.py'])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/sunild/anaconda3/lib/python3.8/subprocess.py", line 854, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/sunild/anaconda3/lib/python3.8/subprocess.py", line 1702, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+PermissionError: [Errno 13] Permission denied: '/usr/local/lib/python3.8'
+>>> subprocess.Popen(['/usr/local/lib/python3.8','/home/sunild/Downloads/gits/automate-stuff-with-python/schedulingTasks/stopwatch.py'])[C[C[C[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C','/home/sunild/Downloads/gits/automate-stuff-with[1P-python/schedulingTasks/stopwatch.py'])[A[C[C[C[C[C[C','/home/sunild/Downloads/gits/automate-stuff-with-[1Ppython/schedulingTasks/stopwatch.py'])[A[C[C[C[C[C[C','/home/sunild/Downloads/gits/automate-stuff-with-p[1Python/schedulingTasks/stopwatch.py'])[A[C[C[C[C[C[C/python','/home/sunild/Downloads/gits/automate-stuff-with-py[1Pthon/schedulingTasks/stopwatch.py'])[A/python','/home/sunild/Downloads/gits/automate-stuff-with-pyt[1Phon/schedulingTasks/stopwatch.py'])[A/python','/home/sunild/Downloads/gits/automate-stuff-with-pyth[1Pon/schedulingTasks/stopwatch.py'])[Apython','/home/sunild/Downloads/gits/automate-stuff-with-pytho[1Pn/schedulingTasks/stopwatch.py'])[A/python','/home/sunild/Downloads/gits/automate-stuff-with-python[1P/schedulingTasks/stopwatch.py'])[A/python','/home/sunild/Downloads/gits/automate-stuff-with-python/[1PschedulingTasks/stopwatch.py'])[A/python','/home/sunild/Downloads/gits/automate-stuff-with-python/s[1PchedulingTasks/stopwatch.py'])[A/python','/home/sunild/Downloads/gits/automate-stuff-with-python/sc[1PhedulingTasks/stopwatch.py'])[A/python','/home/sunild/Downloads/gits/automate-stuff-with-python/sch[1PedulingTasks/stopwatch.py'])[Ab/python','/home/sunild/Downloads/gits/automate-stuff-with-python/schedulingTasks/stopwatch.py'])[Ai/python','/home/sunild/Downloads/gits/automate-stuff-with-python/schedulingTasks/stopwatch.py'])[An/python','/home/sunild/Downloads/gits/automate-stuff-with-python/schedulingTasks/stopwatch.py'])[A
+
+<subprocess.Popen object at 0x7f114ed09e50>
+>>>   File "/home/sunild/Downloads/gits/automate-stuff-with-python/schedulingTasks/stopwatch.py", line 18
+    print(f'Lap: #{lap_counter} {round(times_[-1]-times_[0],2)} ({round(times_[-1]-times_[-2],2)})',end='')
+                                                                                                  ^
+SyntaxError: invalid syntax
+
+>>> exit()
+
+Script done on 2022-03-13 14:10:08+05:30 [COMMAND_EXIT_CODE="0"]

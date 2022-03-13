@@ -1,0 +1,95 @@
+Script started on 2022-03-13 13:05:46+05:30 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="194" LINES="48"]
+Python 3.8.5 (default, Sep  4 2020, 07:30:14) 
+[GCC 7.3.0] :: Anaconda, Inc. on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import datetime
+>>> curr_time=datetime.datetime.now()
+>>> curr_time.year,curr_time.hour,curr_time.minute
+(2022, 13, 6)
+>>> future_time=datetime.datetime(2023,12,12,12,12,12)
+>>> past_time=datetime.datetime(2-[K021,12,12,12,12,12)
+>>> present_time=datetime.datetime.fromTim[K[K[Ktimestamp(time.time())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'time' is not defined
+>>> import im[K[Ktime
+>>> import time[C[C[C[Cpresent_time=datetime.datetime.fromtimestamp(time.time())
+>>> present_time>past_time
+True
+>>> future_time>present_time
+True
+>>> past_time>future_time
+False
+>>> future_time>past_time
+True
+>>> print('we can compare datetime objects')
+we can compare datetime objects
+>>> future_time!=past_time
+True
+>>> present_time==past_time
+False
+>>> [K>>> delta_duration-[K=tim[K[K[Kdare[K[Ktetime.de[K[Ktimedelta(day[K[K[Kweeks=1,days=1,hours=1,minutes=1,seconds=1,mini[K[Kliseconds=1) [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'miliseconds' is an invalid keyword argument for __new__()
+>>> delta_duration=datetime.timedelta(weeks=1,days=1,hours=1,minutes=1,seconds=1,miliseconds=1) [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pseconds=1)
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pseconds=1)[1Pseconds=1)iseconds=1)cseconds=1)rseconds=1) [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Coseconds=1)[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+>>> delta.secon[K[K[K[K[K[K[Ka_duration,[K.days
+8
+>>> delta_duration.seconds
+3661
+>>> delta_duration.seconds[K[K[K[K[K[K[Km
+delta_duration.max           delta_duration.microseconds  delta_duration.min
+>>> delta_duration.microseconds
+1
+>>> delta_duration.min
+datetime.timedelta(days=-999999999)
+>>> delta_duration.min[K[K[Kmax
+datetime.timedelta(days=999999999, seconds=86399, microseconds=999999)
+>>> delta_duration.total_seconds()
+694861.000001
+>>> str(da[Kal[K[Kelta_duration)
+'8 days, 1:01:01.000001'
+>>> x[K[K>>> [K>>> delta_duration_2=datetimet[K.timedelta(days=10)
+>>> datetime[K[K[K[K[K[K[K[Kdelta_duration+delta_duration_2
+datetime.timedelta(days=18, seconds=3661, microseconds=1)
+>>> delta_duration
+datetime.timedelta(days=8, seconds=3661, microseconds=1)
+>>> da[Kelta_duration+present_time
+datetime.datetime(2022, 3, 21, 14, 9, 4, 846551)
+>>> delta_duration+present_time[C[C[C[C[Kdatetime[K[K[K[K[K[K[K[Kpresent_time-delta_duration
+datetime.datetime(2022, 3, 5, 12, 7, 2, 846549)
+>>> present_time-delta_duration*2
+datetime.datetime(2022, 2, 25, 11, 6, 1, 846548)
+>>> present_time-delta_duration*2.2
+datetime.datetime(2022, 2, 23, 20, 29, 49, 646548)
+>>> dela[Kta_duration_2-delta_duration*0.5
+datetime.timedelta(days=5, seconds=84569, microseconds=500000)
+>>> delta_duration_2-delta_duration*0.5[K[K[K[K
+datetime.timedelta(days=1, seconds=82738, microseconds=999999)
+>>> delta_duration_2-delta_duration*2
+datetime.timedelta(days=-7, seconds=79077, microseconds=999998)
+>>> time[K[K[K[Kfoo=datetime.datetime.now()
+>>> foo
+datetime.datetime(2022, 3, 13, 13, 22, 52, 670356)
+>>> faa=date[K[K[K[Kfaa[K[K[K[K[K[K[Ksmall_delta=time[K[K[K[Kdatetime.timedelta(minutes=2)
+>>> faa=foo+small_delta
+>>> while(faa[K[K[Kdatetime.datetime[K[K[K[Ktime.fromtimestamp(time.time())<da[K[Kfaa):
+...     time.sleep()1)
+... 
+>>> [K>>> [K>>> saml[K[K[Kmall_delta.strftim[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kdatetime.da[K[Kstrf[K[K[K[Kdatetime.strftime()[C[C[C[C[C[C[C[C[1P.strftime()[1P.strftime()[1P.strftime()[1P.strftime()[1P.strftime()[1P.strftime()[1P.strftime()[1P.strftime()[1Pstrftime()[1P.strftime()[1P.strftime()[1P.strftime()[C[C[C[C[C[C[C[C[C[1P.strftime()[C[C[C[C[C[C[C[C[1P.strftime()[C[C[C[C[C[C[C[1P.strftime()[C[C[C[C[C[C[1P.strftime()[C[C[C[C[C[1P.strftime()[C[C[C[Cs.strftime()[C[C[C[C[Cm.strftime()[C[C[C[C[C[Ca.strftime()[C[C[C[C[C[C[Cll_delta.strftime()[C[C[C[C[C[C[C[C[C[C[C')%)Y)-)%)m)-)%)d)')[C)[K[C
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'datetime.timedelta' object has no attribute 'strftime'
+>>> present_time.strftime('%Y-%m-%d')
+'2022-03-13'
+>>> [K>>> [K>>> [K>>> [K>>> [K>>> [K>>> [K>>> [K>>> [K>>> [K>>> datetime.datetime.strptime('Ha[K[KMarch of [C[C[C[1P[1P[1P[1P[1P[1@0[1@3[C[C[1P[1P[C[1P - 2 0 2 2 ' , ' % m - % y ' ) [1P[C[1P
+datetime.datetime(2022, 3, 1, 0, 0)
+>>> datetime.datetime.strptime('03-22','%m-%y') [1P[1@ [1@o[1@f[1@ [1P[1P[1@M[1@a[1@r[1@c[1@h[C[C[C[C[C[C[C[C[C[C[C[1P[1@B[1@ [1@o[1@f[1@ [C[1P[C[C
+datetime.datetime(2022, 3, 1, 0, 0)
+>>> datetime.datetime.strptime('March of 22','%B of %y') [C[C[1@2[1@0[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1@Y
+datetime.datetime(2022, 3, 1, 0, 0)
+>>> [K>>> [K>>> exit()
+
+Script done on 2022-03-13 13:38:19+05:30 [COMMAND_EXIT_CODE="0"]
