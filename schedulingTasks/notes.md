@@ -1,3 +1,6 @@
+## cron tutorial
+- https://towardsdatascience.com/create-your-first-cronjob-on-the-linux-server-74e2fdc76e78
+
 ## points
 - Your computer’s clock can sched-
 ule programs to run code at some specified time and
