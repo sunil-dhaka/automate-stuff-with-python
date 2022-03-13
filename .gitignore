@@ -1,6 +1,7 @@
 # added
 helium/logindetails.py
 login.py
+sendingTextandEmail/files/assignedTasks.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
