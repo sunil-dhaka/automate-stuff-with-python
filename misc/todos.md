@@ -7,9 +7,9 @@
 - [] auto email `unsbscriber`[385]
 - [] script to download emailed `torrent/magnet` files via qbit or transmission
 - [] make a game playing bot using `pyautogui`
-- [] 
-- [] 
-- [] 
+- [x] audio files concatenation using `moviepy` or `pydub` or `wave`, also build an argument parser to make it user friendly
+- [x] video files concatenation using `moviepy`, also build an argument parser to make it user friendly
+- [x] extract audio from video file using `ffmpeg(subprocess)` or `moviepy`, with argument parser
 - [] 
 - [] 
 - [] 
