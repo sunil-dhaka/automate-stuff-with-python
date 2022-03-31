@@ -10,7 +10,7 @@
 - [x] audio files concatenation using `moviepy` or `pydub` or `wave`, also build an argument parser to make it user friendly
 - [x] video files concatenation using `moviepy`, also build an argument parser to make it user friendly
 - [x] extract audio from video file using `ffmpeg(subprocess)` or `moviepy`, with argument parser
-- [] 
+- [] create an command line application that translates pdfs and writes them into a new pdf with proper format(if possible); `reportlab` 
 - [] 
 - [] 
 - [] 
