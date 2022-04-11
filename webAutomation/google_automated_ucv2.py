@@ -5,9 +5,10 @@ from bs4 import BeautifulSoup as bs
 from helium import *
 from time import sleep
 import pyautogui
+import numpy as np
 
 # to be able to control window dor one second when things go south
-pyautogui.PAUSE=0.5
+pyautogui.PAUSE=1
 pyautogui.FAILSAFE=True
 
 
@@ -54,19 +55,22 @@ driver.find_element(by='xpath',value="//*[@id='passwordNext']/div/button").send_
 print(f'SUCCESS! Logged into {gmail} account.')
 sleep(2)
 
-driver.get('https://www.youtube.com/c/sbnclasses/videos') # channel link as user input and number videos to be commented # or could give particular video link
-sleep(5)
+"""
+this is done to get the video ids and one can get them using youtube-dl as well 
+"""
+# driver.get('https://www.youtube.com/c/CHAHATKITCHEN/videos') # channel link as user input and number videos to be commented # or could give particular video link
+# sleep(5)
 # driver.find_element(by='xpath',value='/html/body/ytd-app/div/ytd-page-manager/ytd-browse/div[3]/ytd-c4-tabbed-header-renderer/tp-yt-app-header-layout/div/tp-yt-app-header/div[2]/tp-yt-app-toolbar/div/div/tp-yt-paper-tabs/div/div/tp-yt-paper-tab[2]').send_keys(Keys.RETURN)
 # sleep(10)
-html=driver.page_source
-soup=bs(html,'html.parser')
-
+# html=driver.page_source
+# soup=bs(html,'html.parser')
+# comments_=['automated. nice video']
 video_links=['https://www.youtube.com'+video.find(id='thumbnail').get('href') for video in soup.find('div',id='content').find_all('ytd-grid-video-renderer')]
 INTERVAL=0.1
 sleep(5)
 print('5 secs to switch to the main window.')
 
-for i,link in enumerate(video_links): # due to interent issue only 4 vids to test
+for i,link in enumerate(video_links[4:]): # due to interent issue only 4 vids to test
     driver.get(link)
     sleep(5)
     driver.execute_script("window.scrollTo(0,1000)")
@@ -84,9 +88,9 @@ for i,link in enumerate(video_links): # due to interent issue only 4 vids to tes
         needs to keep this frame in front layer
         """
         # click into the comment box
-        pyautogui.click(194,316)
+        pyautogui.click(205,316)
         sleep(1)
-        comment_message='Disclaimer: automated bot comment. Easy to understand and free resources on the channel. GOOD!'
+        comment_message='SUBSCRIBE this channel for all good and simple recipes. for educational content: https://www.youtube.com/c/SBNCLASSES; Note: automated comment by bot.'
         pyautogui.typewrite(comment_message,interval=INTERVAL)
         sleep(1)
         pyautogui.typewrite(['\t','\t','\n'],interval=INTERVAL)
@@ -94,6 +98,10 @@ for i,link in enumerate(video_links): # due to interent issue only 4 vids to tes
         print(f'Commented for video {i+1}')
     else:
         print(f'Video {i+1} has comments turned off.')
+    
+    """
+    currently not working; gives 'element not interactable error'
+    """
     # driver.find_element(by='id',value='simplebox-placeholder').send_keys('This channel does have 🌟good quality🌟 video conetnt. Keep it up SBNCLASSES. 👍')
     # sleep(2)
     # comment_submit=driver.find_element_by_css_selector("tp-yt-paper-button[aria-label='Comment']")
