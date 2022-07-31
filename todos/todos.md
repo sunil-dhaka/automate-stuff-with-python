@@ -1,10 +1,10 @@
 ## SCRIPT IDEAS
-- [] script to crop a given audio/video file at particular intervals and then store in `systematically` named file
+- [x] script to crop a given audio/video file at particular intervals and then store in `systematically` named file
 - [] create an very useful terminal application using `pyperclip` module >> multiclipboard[191]
 - [] make comprehensive notes for `re` module with example scripts >> regex file search[195]
 - [] make comprehensive notes python `debugging` with example scripts
-- [] create `crontab` scripts for your most used python scripts
-- [] auto email `unsbscriber`[385]
+- [x] create `crontab` scripts for your most used python scripts
+- [x] auto email `unsbscriber`[385]
 - [] script to download emailed `torrent/magnet` files via qbit or transmission
 - [] make a game playing bot using `pyautogui`
 - [x] audio files concatenation using `moviepy` or `pydub` or `wave`, also build an argument parser to make it user friendly
@@ -23,3 +23,4 @@
 - [] 
 - [] 
 - [] 
+- [] Create a script that converts html to ipynb back
