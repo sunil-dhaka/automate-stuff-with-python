@@ -43,14 +43,14 @@ def parser():
         '-i',
         '--input',
         required=True,
-        help=''
+        help='input audio file'
     )
     input_parser.add_argument(
         '-s',
         '--split',
         required=True,
         nargs='+',
-        help=''
+        help='format of input is 1:20(1 min 20 sec)'
     )
     return input_parser.parse_args()
 
