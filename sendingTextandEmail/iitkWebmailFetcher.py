@@ -16,12 +16,12 @@ def getEmailInfo():
     server=imapclient.IMAPClient(HOST)
     server.login(email,password)
     print('Logged In.')
-    server.select_folder('INBOX.Sent',readonly=True)
+    server.select_folder('INBOX',readonly=True)
     '''
     flags:
         UNSEEN, ALL, SEEN, DELETED, ANSWERED, FLAGGED, DRAFT, RECENT 
     '''
-    UIDs=server.search(['ALL']) 
+    UIDs=server.search(['SINCE','24-Aug-2022']) 
     for id in UIDs:
         print(id)
         tmp_data=[]
