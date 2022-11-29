@@ -1,6 +1,5 @@
 from email import message
 from pydoc import cli
-from cv2 import log
 from twilio.rest import Client
 import login
 def twilioSMS(sms_body):
@@ -16,3 +15,7 @@ def twilioSMS(sms_body):
     )
 
     print(message.sid)
+
+if __name__ == "__main__":
+    message_=input()
+    twilioSMS(message_)
